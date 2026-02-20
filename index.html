@@ -543,14 +543,14 @@
                     <form id="contact-form" class="space-y-8">
                         <div class="space-y-6">
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                                <input type="text" placeholder="Tu Nombre"
+                                <input type="text" id="contact-name" placeholder="Tu Nombre"
                                     class="w-full bg-slate-50 border border-slate-100 rounded-2xl px-5 py-4 outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 transition-all text-slate-900 font-medium"
                                     required>
-                                <input type="email" placeholder="Email Corporativo"
+                                <input type="email" id="contact-email" placeholder="Email Corporativo"
                                     class="w-full bg-slate-50 border border-slate-100 rounded-2xl px-5 py-4 outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 transition-all text-slate-900 font-medium"
                                     required>
                             </div>
-                            <textarea rows="4" placeholder="¿Cómo podemos ayudarte?"
+                            <textarea id="contact-message" rows="4" placeholder="¿Cómo podemos ayudarte?"
                                 class="w-full bg-slate-50 border border-slate-100 rounded-2xl px-5 py-4 outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 transition-all text-slate-900 font-medium resize-none"
                                 required></textarea>
                         </div>
@@ -608,22 +608,43 @@
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Form Submission Feedback
+        // Form Submission WhatsApp Redirection
         document.getElementById('contact-form').addEventListener('submit', (e) => {
             e.preventDefault();
+
+            const name = document.getElementById('contact-name').value;
+            const email = document.getElementById('contact-email').value;
+            const message = document.getElementById('contact-message').value;
             const btn = e.target.querySelector('button');
             const originalText = btn.innerHTML;
 
-            btn.innerHTML = '<i data-lucide="check" class="w-5 h-5"></i> ¡Mensaje Enviado!';
+            // WhatsApp formatting
+            const whatsappNumber = "56982111260";
+            const whatsappText = encodeURIComponent(
+                `*Nueva Consulta Omega Relatores*\n\n` +
+                `*Nombre:* ${name}\n` +
+                `*Correo:* ${email}\n` +
+                `*Mensaje:* ${message}`
+            );
+            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappText}`;
+
+            // Visual feedback
+            btn.innerHTML = '<i data-lucide="check" class="w-5 h-5"></i> ¡Redirigiendo...!';
             btn.classList.replace('bg-slate-900', 'bg-green-600');
             lucide.createIcons();
 
+            // Redirect after a short delay
             setTimeout(() => {
-                btn.innerHTML = originalText;
-                btn.classList.replace('bg-green-600', 'bg-slate-900');
-                e.target.reset();
-                lucide.createIcons();
-            }, 3000);
+                window.open(whatsappUrl, '_blank');
+
+                // Restore button
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.classList.replace('bg-green-600', 'bg-slate-900');
+                    e.target.reset();
+                    lucide.createIcons();
+                }, 2000);
+            }, 800);
         });
 
         // Smooth reveal for sections
