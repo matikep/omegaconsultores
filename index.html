@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Omega Relatores | Consultoría y Transformación Organizacional</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f8fafc;
+            color: #0f172a;
+        }
+
+        h1,
+        h2,
+        h3,
+        .font-outfit {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(249, 115, 22, 0.1);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #ea580c 0%, #f59e0b 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-gradient {
+            background: radial-gradient(circle at 50% 50%, rgba(251, 146, 60, 0.1) 0%, rgba(248, 250, 252, 0) 70%);
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        .nav-scrolled {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.05);
+        }
+
+        .service-card:hover .icon-box {
+            transform: scale(1.1) rotate(5deg);
+            background: linear-gradient(135deg, #f97316 0%, #fbbf24 100%);
+            color: white;
+        }
+
+        .orange-shadow {
+            box-shadow: 0 20px 40px -15px rgba(249, 115, 22, 0.2);
+        }
+    </style>
+</head>
+
+<body class="selection:bg-orange-200">
+
+    <!-- Background Decoration -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none -z-10">
+        <div class="absolute -top-[10%] -left-[10%] w-[40%] h-[40%] bg-orange-100 blur-[120px] rounded-full opacity-60">
+        </div>
+        <div class="absolute top-[40%] -right-[10%] w-[35%] h-[35%] bg-amber-100 blur-[120px] rounded-full opacity-60">
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 py-6">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold font-outfit tracking-tight flex items-center gap-2">
+                <span class="text-orange-600 text-3xl">Ω</span>
+                <span>omega<span class="text-orange-500">relatores</span>.</span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-10">
+                <a href="#about"
+                    class="text-slate-600 hover:text-orange-600 transition-colors text-sm font-semibold tracking-wide">Nosotros</a>
+                <a href="#services"
+                    class="text-slate-600 hover:text-orange-600 transition-colors text-sm font-semibold tracking-wide">Servicios</a>
+                <a href="#pricing"
+                    class="text-slate-600 hover:text-orange-600 transition-colors text-sm font-semibold tracking-wide">Inversión</a>
+                <a href="#contact"
+                    class="bg-orange-600 hover:bg-orange-500 text-white px-7 py-3 rounded-full text-sm font-bold transition-all transform hover:scale-105 shadow-lg shadow-orange-600/20">
+                    Agendar Reunión
+                </a>
+            </div>
+
+            <!-- Mobile Toggle -->
+            <button id="mobile-menu-btn" class="md:hidden text-slate-800">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu"
+            class="hidden absolute top-full left-0 w-full bg-white border-b border-slate-100 p-6 flex flex-col space-y-4 md:hidden shadow-xl">
+            <a href="#about" class="text-lg font-medium py-2 border-b border-slate-50">Nosotros</a>
+            <a href="#services" class="text-lg font-medium py-2 border-b border-slate-50">Servicios</a>
+            <a href="#pricing" class="text-lg font-medium py-2 border-b border-slate-50">Inversión</a>
+            <a href="#contact" class="bg-orange-600 text-white text-center py-3 rounded-xl font-bold">Agendar
+                Reunión</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-32 pb-20 md:pt-52 md:pb-32 overflow-hidden hero-gradient">
+        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+            <div class="relative z-10">
+                <div
+                    class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-100 border border-orange-200 text-orange-700 text-xs font-bold uppercase tracking-wider mb-8">
+                    <span class="relative flex h-2 w-2">
+                        <span
+                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-orange-600"></span>
+                    </span>
+                    Transformación Organizacional
+                </div>
+                <h1
+                    class="text-6xl md:text-8xl font-extrabold font-outfit leading-[1] mb-8 text-slate-900 tracking-tight">
+                    Inspirar. <br>Empoderar. <br><span class="gradient-text">Transformar.</span>
+                </h1>
+                <p class="text-xl text-slate-600 mb-10 max-w-lg leading-relaxed">
+                    Potenciamos el talento de tu equipo con experiencias de aprendizaje dinámicas que generan resultados
+                    reales y bienestar sostenible.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-5">
+                    <a href="#contact"
+                        class="flex items-center justify-center gap-2 bg-slate-900 text-white hover:bg-slate-800 px-9 py-4 rounded-full font-bold transition-all group shadow-xl">
+                        Comienza Ahora <i data-lucide="arrow-right"
+                            class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                    <a href="#services"
+                        class="flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-slate-900 px-9 py-4 rounded-full font-bold transition-all border border-slate-200 shadow-sm">
+                        Ver Programas
+                    </a>
+                </div>
+                <div class="mt-16 flex items-center gap-10 border-t border-slate-200 pt-10">
+                    <div>
+                        <div class="text-4xl font-extrabold font-outfit text-slate-900">+100</div>
+                        <div class="text-xs text-slate-400 uppercase font-bold tracking-widest mt-1">Horas de Relatoría
+                        </div>
+                    </div>
+                    <div class="w-px h-12 bg-slate-200"></div>
+                    <div>
+                        <div class="text-4xl font-extrabold font-outfit text-slate-900">100%</div>
+                        <div class="text-xs text-slate-400 uppercase font-bold tracking-widest mt-1">Compromiso</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative hidden md:block">
+                <div class="relative animate-float">
+                    <div class="absolute -inset-4 bg-orange-500/10 rounded-[3rem] blur-3xl"></div>
+                    <img src="assets/images/foto4.jpeg" alt="Workshop interactivo"
+                        class="relative rounded-[2.5rem] shadow-2xl border-8 border-white object-cover aspect-[4/5] orange-shadow">
+
+                    <div
+                        class="absolute -bottom-8 -left-8 bg-white p-7 rounded-3xl shadow-2xl border border-slate-100 max-w-[260px]">
+                        <div class="flex items-center gap-4 mb-3">
+                            <div class="bg-orange-100 p-2.5 rounded-xl">
+                                <i data-lucide="trending-up" class="text-orange-600 w-6 h-6"></i>
+                            </div>
+                            <span class="font-bold text-slate-900 text-lg">Impacto</span>
+                        </div>
+                        <p class="text-sm text-slate-500 leading-relaxed">Metodologías comprobadas para elevar el
+                            rendimiento grupal.</p>
+                    </div>
+
+                    <div class="absolute -top-6 -right-6 bg-orange-600 p-5 rounded-full shadow-lg shadow-orange-600/30">
+                        <i data-lucide="sparkles" class="text-white w-7 h-7"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-28 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col items-center text-center max-w-3xl mx-auto mb-20">
+                <span class="text-orange-500 font-black uppercase tracking-[0.2em] text-xs mb-4">Sobre Nosotros</span>
+                <h2 class="text-4xl md:text-5xl font-bold font-outfit mb-6 text-slate-900">Expertos en Potencial Humano
+                </h2>
+                <p class="text-lg text-slate-500">Nuestra misión es empoderar organizaciones a través de la psicología
+                    positiva y la gestión educativa de vanguardia.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+                <!-- Mission Box -->
+                <div
+                    class="md:col-span-7 bg-slate-50 p-12 rounded-[3rem] flex flex-col justify-center relative overflow-hidden group border border-slate-100">
+                    <div class="absolute -bottom-10 -right-10 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
+                        <i data-lucide="target" class="w-64 h-64"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold mb-6 text-slate-900">Nuestra Misión Ω</h3>
+                    <p class="text-xl text-slate-600 leading-relaxed font-medium">
+                        Empoderar y transformar organizaciones a través de espacios de desarrollo personal y
+                        fortalecimiento de habilidades, contribuyendo al bienestar integral y al éxito sostenible de los
+                        equipos.
+                    </p>
+                </div>
+
+                <!-- Founder 1 -->
+                <div
+                    class="md:col-span-5 bg-white p-8 rounded-[3rem] shadow-sm border border-slate-100 hover:shadow-xl hover:shadow-orange-500/5 transition-all group">
+                    <div
+                        class="mb-8 overflow-hidden rounded-[2rem] aspect-square bg-slate-50 flex items-center justify-center relative group-hover:shadow-lg transition-shadow">
+                        <img src="assets/images/foto7.jpeg" alt="Javier Úbeda"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div
+                            class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                            <p class="text-white text-sm font-medium">Experto en Bienestar</p>
+                        </div>
+                    </div>
+                    <h4 class="text-2xl font-bold text-slate-900 mb-1">Javier Úbeda Cabrera</h4>
+                    <p class="text-amber-600 font-bold text-sm mb-5 tracking-wide uppercase">Profesor & Licenciado en
+                        Educación</p>
+
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="graduation-cap" class="w-5 h-5 text-amber-500 mt-0.5 shrink-0"></i>
+                            <span class="text-slate-600 text-sm">Universidad Mayor de Chile</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="award" class="w-5 h-5 text-amber-500 mt-0.5 shrink-0"></i>
+                            <span class="text-slate-600 text-sm">Postítulo Liderazgo Organizacional (PUC)</span>
+                        </li>
+                    </ul>
+                    <p class="text-slate-500 text-sm leading-relaxed border-t border-slate-100 pt-4">
+                        Experto en actividad física, salud y bienestar. Integra el movimiento como herramienta de
+                        transformación de equipos.
+                    </p>
+                </div>
+
+                <!-- Founder 2 -->
+                <div
+                    class="md:col-span-5 bg-white p-8 rounded-[3rem] shadow-sm border border-slate-100 hover:shadow-xl hover:shadow-orange-500/5 transition-all group">
+                    <div
+                        class="mb-8 overflow-hidden rounded-[2rem] aspect-square bg-slate-100 relative group-hover:shadow-lg transition-shadow">
+                        <img src="assets/images/foto8.jpeg" alt="Dr. José Miguel Villegas"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div
+                            class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                            <p class="text-white text-sm font-medium">Dr. en Educación</p>
+                        </div>
+                    </div>
+                    <h4 class="text-2xl font-bold text-slate-900 mb-1">José Miguel Villegas</h4>
+                    <p class="text-orange-600 font-bold text-sm mb-5 tracking-wide uppercase">Psicólogo & Doctor en
+                        Educación</p>
+
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="graduation-cap" class="w-5 h-5 text-orange-500 mt-0.5 shrink-0"></i>
+                            <span class="text-slate-600 text-sm">Dr. por Universidad Autónoma de Barcelona</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="book-open" class="w-5 h-5 text-orange-500 mt-0.5 shrink-0"></i>
+                            <span class="text-slate-600 text-sm">Magíster en Psicología Educacional</span>
+                        </li>
+                    </ul>
+
+                    <p class="text-slate-500 text-sm leading-relaxed border-t border-slate-100 pt-4">
+                        Facilitador de Biodanza y experto en gestión de la convivencia laboral. Transforma climas
+                        organizacionales desde la empatía.
+                    </p>
+                </div>
+
+                <!-- Values -->
+                <div
+                    class="md:col-span-7 bg-orange-50 p-12 rounded-[3rem] flex flex-col justify-center relative overflow-hidden group border border-orange-100 shadow-sm hover:shadow-xl hover:shadow-orange-500/5 transition-all">
+                    <div class="absolute -bottom-10 -right-10 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
+                        <i data-lucide="sparkles" class="w-64 h-64 text-orange-600"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold mb-6 text-slate-900">Propósito Ω</h3>
+                    <p class="text-xl text-slate-600 leading-relaxed font-medium relative z-10">
+                        Creamos entornos de seguridad psicológica donde las personas redescubren sus talentos,
+                        fortalecen sus habilidades blandas y reconectan con el sentido profundo de su labor diaria.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Gallery Section -->
+    <section class="py-20 bg-white overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="space-y-4">
+                    <img src="assets/images/foto1.jpeg" alt="Taller Omega"
+                        class="rounded-3xl w-full aspect-square object-cover shadow-lg hover:scale-[1.02] transition-transform">
+                    <img src="assets/images/foto5.jpeg" alt="Métricas de impacto"
+                        class="rounded-3xl w-full aspect-[3/4] object-cover shadow-lg hover:scale-[1.02] transition-transform">
+                </div>
+                <div class="space-y-4 pt-12">
+                    <img src="assets/images/foto10.jpeg" alt="Equipo Omega"
+                        class="rounded-3xl w-full aspect-[3/4] object-cover shadow-lg hover:scale-[1.02] transition-transform border-4 border-orange-50">
+                    <img src="assets/images/foto9.jpeg" alt="Sesión de coaching"
+                        class="rounded-3xl w-full aspect-square object-cover shadow-lg hover:scale-[1.02] transition-transform">
+                </div>
+                <div class="space-y-4">
+                    <img src="assets/images/foto6.jpeg" alt="Dinámica grupal"
+                        class="rounded-3xl w-full aspect-[3/4] object-cover shadow-lg hover:scale-[1.02] transition-transform">
+                    <img src="assets/images/foto1.jpeg" alt="Presentación"
+                        class="rounded-3xl w-full aspect-square object-cover shadow-lg hover:scale-[1.02] transition-transform">
+                </div>
+                <div class="space-y-4 pt-8">
+                    <img src="assets/images/foto5.jpeg" alt="Resultados"
+                        class="rounded-3xl w-full aspect-square object-cover shadow-lg hover:scale-[1.02] transition-transform">
+                    <img src="assets/images/foto10.jpeg" alt="Liderazgo"
+                        class="rounded-3xl w-full aspect-[3/4] object-cover shadow-lg hover:scale-[1.02] transition-transform">
+                </div>
+            </div>
+            <div class="mt-16 text-center">
+                <p class="text-slate-400 font-medium italic">"Experiencias reales, resultados medibles en organizaciones
+                    de todo Chile."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-28 bg-slate-50">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+                <div class="max-w-2xl">
+                    <span class="text-orange-500 font-bold uppercase tracking-widest text-xs">Nuestros Servicios</span>
+                    <h2 class="text-4xl md:text-5xl font-bold font-outfit mt-4 text-slate-900 leading-tight">Soluciones
+                        Diseñadas para <span class="text-orange-600">Evolucionar</span></h2>
+                </div>
+                <p class="text-slate-500 max-w-sm">Metodologías participativas que transforman la cultura organizacional
+                    desde adentro.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <!-- Service 1 -->
+                <div
+                    class="service-card group bg-white p-10 rounded-[2.5rem] shadow-sm hover:shadow-2xl transition-all duration-500 border border-slate-100 flex flex-col">
+                    <div
+                        class="icon-box w-16 h-16 bg-orange-50 rounded-2xl flex items-center justify-center mb-8 transition-all text-orange-600">
+                        <i data-lucide="message-circle" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-5 text-slate-900">Comunicación Efectiva</h3>
+                    <p class="text-slate-500 leading-relaxed mb-8 flex-grow">Dominio de la asertividad y la escucha
+                        activa para eliminar silos y potenciar la colaboración.</p>
+                    <div class="pt-6 border-t border-slate-50 flex items-center justify-between">
+                        <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">Feedback &
+                            Empatía</span>
+                        <div
+                            class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center group-hover:bg-orange-600 group-hover:text-white transition-colors">
+                            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 2 (Featured) -->
+                <div
+                    class="service-card group bg-white p-10 rounded-[2.5rem] shadow-xl shadow-orange-500/5 hover:shadow-2xl transition-all duration-500 border-2 border-orange-100 flex flex-col relative overflow-hidden">
+                    <div
+                        class="absolute top-0 right-0 bg-orange-600 text-white text-[10px] font-black px-6 py-1.5 rotate-45 translate-x-8 translate-y-4 uppercase tracking-tighter">
+                        Estrella</div>
+                    <div
+                        class="icon-box w-16 h-16 bg-orange-600 rounded-2xl flex items-center justify-center mb-8 transition-all text-white">
+                        <i data-lucide="crown" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-5 text-slate-900">Liderazgo Inspirador</h3>
+                    <p class="text-slate-500 leading-relaxed mb-8 flex-grow">Desarrollamos líderes con inteligencia
+                        emocional capaces de guiar equipos hacia la excelencia con propósito.</p>
+                    <div class="pt-6 border-t border-slate-50 flex items-center justify-between">
+                        <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">Gestión de
+                            Talento</span>
+                        <div
+                            class="w-8 h-8 rounded-full bg-orange-600 text-white flex items-center justify-center shadow-lg shadow-orange-500/30">
+                            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div
+                    class="service-card group bg-white p-10 rounded-[2.5rem] shadow-sm hover:shadow-2xl transition-all duration-500 border border-slate-100 flex flex-col">
+                    <div
+                        class="icon-box w-16 h-16 bg-amber-50 rounded-2xl flex items-center justify-center mb-8 transition-all text-amber-600">
+                        <i data-lucide="heart-pulse" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-5 text-slate-900">Bienestar & Resiliencia</h3>
+                    <p class="text-slate-500 leading-relaxed mb-8 flex-grow">Estrategias de manejo del estrés y
+                        mindfulness laboral para mantener equipos sanos y motivados.</p>
+                    <div class="pt-6 border-t border-slate-50 flex items-center justify-between">
+                        <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">Salud Mental</span>
+                        <div
+                            class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center group-hover:bg-amber-600 group-hover:text-white transition-colors">
+                            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-28 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-20">
+                <h2 class="text-4xl font-bold font-outfit mb-4 text-slate-900">Inversión Transparente</h2>
+                <p class="text-slate-500">Valores fijos por hora para una planificación clara de tu presupuesto de
+                    capacitación. Contamos con código SENCE.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+                <!-- Plan 1 -->
+                <div
+                    class="p-10 rounded-[3rem] bg-slate-50 border border-slate-100 transition-transform hover:scale-105">
+                    <div class="mb-8">
+                        <div class="text-slate-400 text-xs font-black uppercase tracking-[0.2em] mb-2">Pymes & Startups
+                        </div>
+                        <div class="text-5xl font-black font-outfit text-slate-900">$120.000<span
+                                class="text-lg text-slate-400">/hr</span></div>
+                    </div>
+                    <ul class="space-y-4 mb-10">
+                        <li class="flex items-center gap-3 text-slate-600 text-sm font-medium"><i data-lucide="check"
+                                class="text-orange-500 w-5 h-5"></i> Hasta 25 personas</li>
+                        <li class="flex items-center gap-3 text-slate-600 text-sm font-medium"><i data-lucide="check"
+                                class="text-orange-500 w-5 h-5"></i> 1 Relator experto</li>
+                        <li class="flex items-center gap-3 text-slate-600 text-sm font-medium"><i data-lucide="check"
+                                class="text-orange-500 w-5 h-5"></i> Material digital</li>
+                    </ul>
+                    <a href="#contact"
+                        class="block w-full text-center py-4 rounded-2xl bg-white border border-slate-200 font-bold text-slate-900 hover:bg-slate-50 transition-colors">Solicitar</a>
+                </div>
+
+                <!-- Plan 2 (Main) -->
+                <div
+                    class="p-12 rounded-[3.5rem] bg-slate-900 text-white shadow-2xl shadow-orange-600/20 relative z-10 transition-transform hover:scale-105">
+                    <div
+                        class="absolute -top-5 left-1/2 -translate-x-1/2 bg-orange-600 px-6 py-2 rounded-full text-xs font-black uppercase tracking-widest">
+                        Más Popular</div>
+                    <div class="mb-8">
+                        <div class="text-orange-400 text-xs font-black uppercase tracking-[0.2em] mb-2">Empresa Media
+                        </div>
+                        <div class="text-6xl font-black font-outfit">$160.000<span
+                                class="text-xl text-slate-500">/hr</span></div>
+                    </div>
+                    <ul class="space-y-5 mb-12">
+                        <li class="flex items-center gap-3 text-sm font-medium"><i data-lucide="check"
+                                class="text-orange-500 w-6 h-6"></i> De 25 a 50 personas</li>
+                        <li class="flex items-center gap-3 text-sm font-medium"><i data-lucide="check"
+                                class="text-orange-500 w-6 h-6"></i> Dinámicas grupales</li>
+                        <li class="flex items-center gap-3 text-sm font-medium"><i data-lucide="check"
+                                class="text-orange-500 w-6 h-6"></i> Reporte de resultados</li>
+                        <li class="flex items-center gap-3 text-sm font-medium"><i data-lucide="check"
+                                class="text-orange-500 w-6 h-6"></i> Opción SENCE</li>
+                    </ul>
+                    <a href="#contact"
+                        class="block w-full text-center py-5 rounded-2xl bg-orange-600 font-bold text-white hover:bg-orange-500 transition-all shadow-xl shadow-orange-600/30">Agendar
+                        Workshop</a>
+                </div>
+
+                <!-- Plan 3 -->
+                <div
+                    class="p-10 rounded-[3rem] bg-slate-50 border border-slate-100 transition-transform hover:scale-105">
+                    <div class="mb-8">
+                        <div class="text-slate-400 text-xs font-black uppercase tracking-[0.2em] mb-2">Corporativo</div>
+                        <div class="text-5xl font-black font-outfit text-slate-900">$200.000<span
+                                class="text-lg text-slate-400">/hr</span></div>
+                    </div>
+                    <ul class="space-y-4 mb-10">
+                        <li class="flex items-center gap-3 text-slate-600 text-sm font-medium"><i data-lucide="check"
+                                class="text-orange-500 w-5 h-5"></i> Más de 50 personas</li>
+                        <li class="flex items-center gap-3 text-slate-600 text-sm font-medium"><i data-lucide="check"
+                                class="text-orange-500 w-5 h-5"></i> 2 Facilitadores</li>
+                        <li class="flex items-center gap-3 text-slate-600 text-sm font-medium"><i data-lucide="check"
+                                class="text-orange-500 w-5 h-5"></i> Contenido personalizado</li>
+                    </ul>
+                    <a href="#contact"
+                        class="block w-full text-center py-4 rounded-2xl bg-white border border-slate-200 font-bold text-slate-900 hover:bg-slate-50 transition-colors">Hablar
+                        con Experto</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer & Contact -->
+    <footer id="contact" class="bg-slate-50 pt-32 pb-16 border-t border-slate-200">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-24 mb-24">
+                <div>
+                    <span class="text-orange-600 font-black uppercase tracking-widest text-xs">Contáctanos</span>
+                    <h2 class="text-5xl md:text-6xl font-bold font-outfit mt-6 mb-8 text-slate-900 leading-tight">
+                        ¿Hablamos sobre <br><span class="text-orange-500">tu futuro equipo?</span></h2>
+                    <p class="text-lg text-slate-500 mb-12 max-w-md">Estamos listos para transformar los desafíos de tu
+                        organización en oportunidades de crecimiento real.</p>
+
+                    <div class="space-y-8">
+                        <div class="flex items-center gap-6 group cursor-pointer">
+                            <div
+                                class="w-14 h-14 rounded-2xl bg-white shadow-sm flex items-center justify-center group-hover:bg-orange-600 group-hover:text-white transition-all">
+                                <i data-lucide="mail" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-slate-400 font-black uppercase tracking-widest">Escríbenos
+                                </div>
+                                <div class="text-lg font-bold text-slate-900">omega.relatores@gmail.com</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-6 group cursor-pointer">
+                            <div
+                                class="w-14 h-14 rounded-2xl bg-white shadow-sm flex items-center justify-center group-hover:bg-green-600 group-hover:text-white transition-all">
+                                <i data-lucide="phone" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-slate-400 font-black uppercase tracking-widest">Llámanos</div>
+                                <div class="text-lg font-bold text-slate-900">+56 9 8211 1260</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-white p-10 md:p-12 rounded-[3rem] shadow-2xl shadow-slate-200/50 border border-slate-100">
+                    <form id="contact-form" class="space-y-8">
+                        <div class="space-y-6">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <input type="text" placeholder="Tu Nombre"
+                                    class="w-full bg-slate-50 border border-slate-100 rounded-2xl px-5 py-4 outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 transition-all text-slate-900 font-medium"
+                                    required>
+                                <input type="email" placeholder="Email Corporativo"
+                                    class="w-full bg-slate-50 border border-slate-100 rounded-2xl px-5 py-4 outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 transition-all text-slate-900 font-medium"
+                                    required>
+                            </div>
+                            <textarea rows="4" placeholder="¿Cómo podemos ayudarte?"
+                                class="w-full bg-slate-50 border border-slate-100 rounded-2xl px-5 py-4 outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 transition-all text-slate-900 font-medium resize-none"
+                                required></textarea>
+                        </div>
+                        <button type="submit"
+                            class="w-full bg-slate-900 hover:bg-orange-600 text-white font-bold py-5 rounded-2xl transition-all flex items-center justify-center gap-3 group shadow-xl">
+                            Enviar Solicitud <i data-lucide="send"
+                                class="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="pt-12 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="text-2xl font-black font-outfit tracking-tighter">
+                    <span class="text-orange-600 text-3xl">Ω</span> OMEGA<span class="text-slate-400">RELATORES</span>
+                </div>
+                <div class="text-center md:text-left">
+                    <p class="text-slate-400 text-sm font-bold tracking-widest uppercase">© 2026 Innovación en Personas
+                    </p>
+                    <a href="https://matiaslobos.cl" target="_blank"
+                        class="text-[10px] text-slate-300 hover:text-orange-400 transition-colors uppercase tracking-[0.2em] font-medium mt-2 block">
+                        Sitio desarrollado por matiaslobos.cl
+                    </a>
+                </div>
+                <div class="flex gap-6">
+                    <a href="#" class="text-slate-400 hover:text-orange-600 transition-colors"><i data-lucide="linkedin"
+                            class="w-6 h-6"></i></a>
+                    <a href="#" class="text-slate-400 hover:text-orange-600 transition-colors"><i
+                            data-lucide="instagram" class="w-6 h-6"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('nav-scrolled', 'py-4');
+                nav.classList.remove('py-6');
+            } else {
+                nav.classList.remove('nav-scrolled', 'py-4');
+                nav.classList.add('py-6');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Form Submission Feedback
+        document.getElementById('contact-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            const originalText = btn.innerHTML;
+
+            btn.innerHTML = '<i data-lucide="check" class="w-5 h-5"></i> ¡Mensaje Enviado!';
+            btn.classList.replace('bg-slate-900', 'bg-green-600');
+            lucide.createIcons();
+
+            setTimeout(() => {
+                btn.innerHTML = originalText;
+                btn.classList.replace('bg-green-600', 'bg-slate-900');
+                e.target.reset();
+                lucide.createIcons();
+            }, 3000);
+        });
+
+        // Smooth reveal for sections
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-12');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section, header > div').forEach(el => {
+            el.classList.add('opacity-0', 'translate-y-12', 'transition-all', 'duration-1000', 'ease-out');
+            observer.observe(el);
+        });
+    </script>
+</body>
+
+</html>
